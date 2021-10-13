@@ -3,8 +3,6 @@ import { sleepNoPromise } from '../function';
 
 class CountService {
   public chooseColor(count: number) {
-    sleepNoPromise(2000)
-
     if(count % 2 === 0) {
       return 'red';
     }

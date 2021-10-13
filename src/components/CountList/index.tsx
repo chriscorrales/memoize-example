@@ -1,26 +1,20 @@
 import { useCallback, useMemo, useState } from 'react';
 import countService from '../../services/countService';
-import Count from './Count';
+import Counter from './Count';
 import { Container } from './styles';
-
 
 function CountList() {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(1000);
-  const color = useMemo(() => countService.chooseColor(count1), [count1]);
+  const handleInclement = useCallback(() => setCount1((count1) => count1 + 1), []);
+  const handleDecrement = () => setCount2((count2) => count2 - 1);
 
-  const handleInclement = useCallback(async () => {
-    setCount1(count1 + 1);
-  }, [count1]);
-
-  const handleDecrement = useCallback(() => {
-    setCount2(count2 - 1);
-  }, [count2]);
+  const color = useMemo(() => countService.chooseColor(count1), []);
 
   return (
-    <Container style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <Count color={color} value={count1} setValue={handleInclement} buttonText="Inclement" />
-      <Count value={count2} setValue={handleDecrement} buttonText="Declement" />
+    <Container>
+      <Counter color={color} setValue={handleInclement} value={count1} buttonText="Inclement" />
+      <Counter setValue={handleDecrement} value={count2} buttonText="Declement" />
     </Container>
   );
 }

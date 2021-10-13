@@ -5,12 +5,12 @@ import { Button, Container, Text } from './styles';
 
 interface IProps {
   value: number;
-  setValue: () => void;
+  setValue?: () => void;
   buttonText: string;
   color?: string;
 }
 
-function Count({ value, setValue, buttonText, color }: IProps) {
+function Counter({ value, setValue, buttonText, color }: IProps) {
   return (
     <Container style={{ backgroundColor: color }}>
       <Text>{value}</Text>
@@ -19,4 +19,4 @@ function Count({ value, setValue, buttonText, color }: IProps) {
   );
 }
 
-export default memo(Count);
+export default Counter;
