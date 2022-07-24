@@ -1,4 +1,3 @@
-import CountList from './components/CountList';
 import ProductList from './components/ProductList';
 import { Section } from './styles';
 

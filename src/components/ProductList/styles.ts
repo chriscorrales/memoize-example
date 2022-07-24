@@ -9,18 +9,3 @@ export const ContainerList = styled.div`
   grid-gap: 30px;
   margin: 20px 0 0;
 `;
-
-export const Input = styled.input`
-  margin: 0 auto;
-  width: 90%;
-  height: 45px;
-  padding: 0 20px;
-  font-size: 1rem;
-  border: 1px solid #d0cfce;
-  outline: none;
-  &:focus {
-    border: 1px solid #008abf;
-    transition: 0.35s ease;
-    color: #008abf;
-  }
-`;
